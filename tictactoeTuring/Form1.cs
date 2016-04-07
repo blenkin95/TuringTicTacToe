@@ -396,7 +396,13 @@ namespace tictactoeTuring
         private void enterChat_Click(object sender, EventArgs e)
         {
                    
-            bool shutdown = false;
+            //ARRAY VALUES ASSIGNMENT
+            //1 - 100 && 900 -999 Myoran
+            // 101 - 200 && 899 - 800 Liam
+            //201 - 300 && 799 - 700 Tom R
+            // 301 - 400 && 699 - 600 Tom B
+
+           // bool shutdown = false;
             bool foundResponse = false;
             string inputValue;
             string outputValue = "";
@@ -404,16 +410,16 @@ namespace tictactoeTuring
             inputValue = userInputText.Text.ToLower(); //converts response to lowercase
 
 
-            //generic answers
+            //generic answers focus more on this
             if (inputValue.Contains('?'))
             {
-                responseArray(outputValue, 998);
+                outputValue = responseArray(outputValue, 998);
                 foundResponse = true;
             }
             //else if statments
 
 
-            //specific answers
+            //specific answers focus less on this
             switch(inputValue)
             {
                 case "hello":
@@ -427,12 +433,12 @@ namespace tictactoeTuring
                     break;
 
                 case "good move":
-
+                    outputValue = responseArray(outputValue, 3);
+                    foundResponse = true;
                     break;
             }
             
-           
-
+    
 
             if (foundResponse)
             {
@@ -440,7 +446,7 @@ namespace tictactoeTuring
             }
             else if (inputValue == "")
             {
-
+                //The most neutral generic responses
             }
             else
             {
@@ -466,6 +472,11 @@ namespace tictactoeTuring
                 case 2:
                     string[] howareyouResponse = { "Fine", "Good thanks", "ok, you?", "not too bad", "great" };
                     outputValue = howareyouResponse[rnd.Next(0, howareyouResponse.Length)];
+                    break;
+
+                case 3:
+                    string[] goodmoveResponse = { "thanks", "I know"};
+                    outputValue = goodmoveResponse[rnd.Next(0, goodmoveResponse.Length)];
                     break;
 
                 case 998:
