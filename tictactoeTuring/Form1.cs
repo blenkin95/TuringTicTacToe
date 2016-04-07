@@ -416,6 +416,17 @@ namespace tictactoeTuring
                 outputValue = responseArray(outputValue, 998);
                 foundResponse = true;
             }
+            else if (inputValue.Contains("terrible"))
+            {
+                outputValue = responseArray(outputValue, 997);
+                foundResponse = true;
+            }
+            else if(inputValue.Contains("wargame"))
+            {
+                outputValue = responseArray(outputValue, 996);
+                foundResponse = true;
+            }
+            else if 
             //else if statments
 
 
@@ -435,6 +446,9 @@ namespace tictactoeTuring
                 case "good move":
                     outputValue = responseArray(outputValue, 3);
                     foundResponse = true;
+                    break;
+                case "":
+
                     break;
             }
             
@@ -475,8 +489,17 @@ namespace tictactoeTuring
                     break;
 
                 case 3:
-                    string[] goodmoveResponse = { "thanks", "I know"};
+                    string[] goodmoveResponse = { "thanks", "I know"}; //Expand so array is general for positive responses
                     outputValue = goodmoveResponse[rnd.Next(0, goodmoveResponse.Length)];
+                    break;
+
+                case 996:
+                    string[] wargameResponse = { "Greetings, Professor Falken", "Because it's a boring game. It's always a tie", "The game itself is pointless!"};
+                    break;
+
+                case 997:
+                    string[] terribleResponse = { "Nope", "Nargh", "I don't think so" };
+                    outputValue = terribleResponse[rnd.Next(0, terribleResponse.Length)];
                     break;
 
                 case 998:
