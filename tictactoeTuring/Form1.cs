@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -228,6 +229,13 @@ namespace tictactoeTuring
 
             Button move = null;
 
+
+            Random moveTime = new Random();              //Generates random number
+
+            int timer = 1000 * moveTime.Next(1, 4);       //Sets timer between 1000 and 4000 milliseconds
+            Thread.Sleep(timer);                        //Waits for generated number of milliseconds
+
+
             //look for tic tac toe opportunities
             move = look_for_win_or_block("O"); //look for win
             if (move == null)
@@ -393,16 +401,21 @@ namespace tictactoeTuring
 
 
 
-        private void enterChat_Click(object sender, EventArgs e)
+        private async void enterChat_Click(object sender, EventArgs e)
         {
-                   
+
+            Random responseTime = new Random();              //Generates random number
+
+            int timer = 1000 * responseTime.Next(3, 5);      //Sets reponse timer between 3 and 5 seconds
+            await Task.Delay(timer);
+
             //ARRAY VALUES ASSIGNMENT
             //1 - 100 && 900 -999 Myoran
             // 101 - 200 && 899 - 800 Liam
             //201 - 300 && 799 - 700 Tom R
             // 301 - 400 && 699 - 600 Tom B
 
-           // bool shutdown = false;
+            // bool shutdown = false;
             bool foundResponse = false;
             string inputValue;
             string outputValue = "";
@@ -426,7 +439,7 @@ namespace tictactoeTuring
                 outputValue = responseArray(outputValue, 996);
                 foundResponse = true;
             }
-            else if 
+           
             //else if statments
 
 
@@ -513,8 +526,7 @@ namespace tictactoeTuring
                     break;
 
             }
-
-
+            
 
             return outputValue;
         }
