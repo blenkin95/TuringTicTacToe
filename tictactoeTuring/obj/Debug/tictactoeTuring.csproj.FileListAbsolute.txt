@@ -27,3 +27,13 @@ C:\Users\Myoran\Desktop\tictactoeTuring-master\tictactoeTuring\obj\Debug\tictact
 C:\Users\Myoran\Desktop\tictactoeTuring-master\tictactoeTuring\obj\Debug\tictactoeTuring.Form2.resources
 C:\Users\Myoran\Desktop\tictactoeTuring-master\tictactoeTuring\obj\Debug\tictactoeTuring.Properties.Resources.resources
 C:\Users\Myoran\Desktop\tictactoeTuring-master\tictactoeTuring\obj\Debug\tictactoeTuring.csproj.GenerateResource.Cache
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\bin\Debug\tictactoeTuring.exe.config
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\obj\Debug\tictactoeTuring.exe
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\obj\Debug\tictactoeTuring.pdb
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\obj\Debug\tictactoeTuring.csprojResolveAssemblyReference.cache
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\obj\Debug\tictactoeTuring.Form1.resources
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\obj\Debug\tictactoeTuring.Form2.resources
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\obj\Debug\tictactoeTuring.Properties.Resources.resources
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\obj\Debug\tictactoeTuring.csproj.GenerateResource.Cache
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\bin\Debug\tictactoeTuring.exe
+H:\University\SecondYear\Group Project\TicTacToe\TuringTicTacToe\tictactoeTuring\bin\Debug\tictactoeTuring.pdb
