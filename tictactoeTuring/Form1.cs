@@ -496,13 +496,13 @@ namespace tictactoeTuring
                     outputValue = helloResponse[rnd.Next(0, helloResponse.Length)];
                     break;  
 
-                case 2:
-                    string[] howareyouResponse = { "Fine", "Good thanks", "ok, you?", "not too bad", "great" };
+                case 2: //How are you?
+                    string[] howareyouResponse = { "Fine", "Good thanks", "Ok, you?", "Not too bad", "Great" };
                     outputValue = howareyouResponse[rnd.Next(0, howareyouResponse.Length)];
                     break;
 
-                case 3:
-                    string[] goodmoveResponse = { "thanks", "I know"}; //Expand so array is general for positive responses
+                case 3: //Good move
+                    string[] goodmoveResponse = { "Thanks", "I know", "I'm just a natural", "Thank you", "It's just Tic-Tac-Toe"}; //Expand so array is general for positive responses
                     outputValue = goodmoveResponse[rnd.Next(0, goodmoveResponse.Length)];
                     break;
 
@@ -516,7 +516,7 @@ namespace tictactoeTuring
                     break;
 
                 case 998:
-                    string[] questionResponse = {"I don't like questions", "lets focus on the game", "meh", "I dont care"} ;
+                    string[] questionResponse = {"I don't like questions", "Let's focus on the game", "Meh", "I don't care", "Game first, questions later"} ;
                     outputValue = questionResponse[rnd.Next(0, questionResponse.Length)];
                     break;
 
