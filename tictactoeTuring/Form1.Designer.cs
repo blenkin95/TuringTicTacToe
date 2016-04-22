@@ -298,7 +298,7 @@
             // viewChat
             // 
             this.viewChat.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.viewChat.Font = new System.Drawing.Font("TYPO COMICS DEMO", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewChat.Font = new System.Drawing.Font("Verdana", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.viewChat.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.viewChat.Location = new System.Drawing.Point(12, 414);
             this.viewChat.Name = "viewChat";
