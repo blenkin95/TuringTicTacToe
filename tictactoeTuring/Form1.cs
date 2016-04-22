@@ -406,7 +406,8 @@ namespace tictactoeTuring
 
             Random responseTime = new Random();              //Generates random number
 
-            int timer = 1000 * responseTime.Next(3, 5);      //Sets reponse timer between 3 and 5 seconds
+            int timer = 1000 * responseTime.Next(2, 5);      //Sets reponse timer between 3 and 5 seconds
+            viewChat.Text = "Player 2 is typing";
             await Task.Delay(timer);
 
             //ARRAY VALUES ASSIGNMENT
@@ -422,6 +423,7 @@ namespace tictactoeTuring
 
             inputValue = userInputText.Text.ToLower(); //converts response to lowercase
 
+            //ALL POSSIBLE INPUT VALUES ARE CONVERTED TO LOWERCASE SO KEEP ANTICIPATED RESPONSES IN LOWERCASE
 
             //generic answers focus more on this
             if (inputValue.Contains('?'))
@@ -439,7 +441,17 @@ namespace tictactoeTuring
                 outputValue = responseArray(outputValue, 996);
                 foundResponse = true;
             }
-           
+           else if(inputValue.Contains("human"))
+            {
+                outputValue = responseArray(outputValue, 995);
+                foundResponse = true;
+            }
+            else if(inputValue.Contains("ai"))
+            {
+                outputValue = responseArray(outputValue, 994);
+                foundResponse = true;
+            }
+            
             //else if statments
 
 
@@ -460,8 +472,12 @@ namespace tictactoeTuring
                     outputValue = responseArray(outputValue, 3);
                     foundResponse = true;
                     break;
-                case "":
 
+                case "are you an ai?":
+                    outputValue = responseArray(outputValue, 4);
+                    foundResponse = true;
+                    break;
+                default:
                     break;
             }
             
@@ -505,11 +521,27 @@ namespace tictactoeTuring
                     string[] goodmoveResponse = { "Thanks", "I know", "I'm just a natural", "Thank you", "It's just Tic-Tac-Toe"}; //Expand so array is general for positive responses
                     outputValue = goodmoveResponse[rnd.Next(0, goodmoveResponse.Length)];
                     break;
+                case 4: //User asks if 2nd player is an ai
+                    string[] aiResponse = { "I am not an ai", "I'm all flesh and blood", "I am not a computer", "I am a real human being", "Beep Boop - Command not recognised)" }; //Expand so array is general for positive responses
+                    outputValue = aiResponse[rnd.Next(0, aiResponse.Length)];
+                    break;
+
+
+
+                case 994:
+                    string[] genericAIResponse = { "AI is fascintating", "I wish i could work on an AI project", "Sometimes, I wish I was an AI" };
+                    outputValue = genericAIResponse[rnd.Next(0, genericAIResponse.Length)];
+                    break;
+
+                case 995:
+                    string[] humanResponse = { "I am a human", "Why would you say that?", "Are you a human?" };
+                    outputValue = humanResponse[rnd.Next(0, humanResponse.Length)];
+                    break;
 
                 case 996:
                     string[] wargameResponse = { "Greetings, Professor Falken", "Because it's a boring game. It's always a tie", "The game itself is pointless!"};
                     break;
-
+                                  
                 case 997:
                     string[] terribleResponse = { "Nope", "Nargh", "I don't think so" };
                     outputValue = terribleResponse[rnd.Next(0, terribleResponse.Length)];
