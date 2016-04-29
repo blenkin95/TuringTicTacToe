@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +16,7 @@ namespace tictactoeTuring
         bool turn = true;//When true = x, when false = y
         int turnCount = 0; //+1 every turn , if 9 with no winner game ends
         bool againstComp = true;
-      
+
         //static string player1, player2;
 
         public Form1()
@@ -31,7 +31,7 @@ namespace tictactoeTuring
         //}
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-                   }
+        }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -63,14 +63,14 @@ namespace tictactoeTuring
                 computer_make_move();
             }
 
-          
+
         }
 
         private void checkForWinner()
         {
             bool thereIsAWinner = false;
             //horizontal victories
-            if((A1.Text == A2.Text) && (A2.Text == A3.Text) && (!A1.Enabled))
+            if ((A1.Text == A2.Text) && (A2.Text == A3.Text) && (!A1.Enabled))
                 thereIsAWinner = true;
             else if ((B1.Text == B2.Text) && (B2.Text == B3.Text) && (!B1.Enabled))
                 thereIsAWinner = true;
@@ -126,14 +126,14 @@ namespace tictactoeTuring
         private void disableButtons()
         {
             try
-                {
+            {
                 foreach (Control c in Controls) //For each buton on the form, disable it
                 {
                     Button b = (Button)c;
                     b.Enabled = false;
                 }
-             }
-          catch { } //KEEP THIS IN
+            }
+            catch { } //KEEP THIS IN
 
 
 
@@ -145,16 +145,16 @@ namespace tictactoeTuring
             turnCount = 0;
 
             foreach (Control c in Controls) //For each buton on the form, disable it
+            {
+                try
                 {
-                    try
-                    {
-                        Button b = (Button)c; //convert to button
-                        b.Enabled = turn;
-                        b.Text = "";
-                    }
-                    catch { }
+                    Button b = (Button)c; //convert to button
+                    b.Enabled = turn;
+                    b.Text = "";
                 }
-            
+                catch { }
+            }
+
         }
 
         private void button_enter(object sender, EventArgs e)
@@ -172,7 +172,7 @@ namespace tictactoeTuring
 
             }
             catch { }
-         
+
         }
 
 
@@ -194,10 +194,10 @@ namespace tictactoeTuring
 
         private void Form1_Load(object sender, EventArgs e)
         {
-        //    Form f2 = new Form2();
-        //    f2.ShowDialog();
-        //    p1.Text = player1;
-        //    p2.Text = player2;
+            //    Form f2 = new Form2();
+            //    f2.ShowDialog();
+            //    p1.Text = player1;
+            //    p2.Text = player2;
         }
 
         private void p1_TextChanged(object sender, EventArgs e)
@@ -436,27 +436,27 @@ namespace tictactoeTuring
                 outputValue = responseArray(outputValue, 997);
                 foundResponse = true;
             }
-            else if(inputValue.Contains("wargame"))
+            else if (inputValue.Contains("wargame"))
             {
                 outputValue = responseArray(outputValue, 996);
                 foundResponse = true;
             }
-           else if(inputValue.Contains("human"))
+            else if (inputValue.Contains("human"))
             {
                 outputValue = responseArray(outputValue, 995);
                 foundResponse = true;
             }
-            else if(inputValue.Contains("ai"))
+            else if (inputValue.Contains("ai"))
             {
                 outputValue = responseArray(outputValue, 994);
                 foundResponse = true;
             }
-            
+
             //else if statments
 
 
             //specific answers focus less on this
-            switch(inputValue)
+            switch (inputValue)
             {
                 case "hello":
                     outputValue = responseArray(outputValue, 1);
@@ -477,15 +477,20 @@ namespace tictactoeTuring
                     outputValue = responseArray(outputValue, 4);
                     foundResponse = true;
                     break;
+
+                case "university":
+                    outputValue = responseArray(outputValue, 5);
+                    foundResponse = true;
+                    break;
                 default:
                     break;
             }
-            
-    
+
+
 
             if (foundResponse)
             {
-                viewChat.Text = outputValue;   
+                viewChat.Text = outputValue;
             }
             else if (inputValue == "")
             {
@@ -494,7 +499,7 @@ namespace tictactoeTuring
             else
             {
                 outputValue = responseArray(outputValue, 999);
-                viewChat.Text = outputValue;  
+                viewChat.Text = outputValue;
                 //if no response found, neutral response given
             }
 
@@ -505,12 +510,12 @@ namespace tictactoeTuring
         {
             Random rnd = new Random();
 
-            switch(num)
+            switch (num)
             {
                 case 1: //hello
                     string[] helloResponse = { "Hey", "'Sup", "Hello", "Howdy", "Welcome" };
                     outputValue = helloResponse[rnd.Next(0, helloResponse.Length)];
-                    break;  
+                    break;
 
                 case 2: //How are you?
                     string[] howareyouResponse = { "Fine", "Good thanks", "Ok, you?", "Not too bad", "Great" };
@@ -518,12 +523,17 @@ namespace tictactoeTuring
                     break;
 
                 case 3: //Good move
-                    string[] goodmoveResponse = { "Thanks", "I know", "I'm just a natural", "Thank you", "It's just Tic-Tac-Toe"}; //Expand so array is general for positive responses
+                    string[] goodmoveResponse = { "Thanks", "I know", "I'm just a natural", "Thank you", "It's just Tic-Tac-Toe" }; //Expand so array is general for positive responses
                     outputValue = goodmoveResponse[rnd.Next(0, goodmoveResponse.Length)];
                     break;
                 case 4: //User asks if 2nd player is an ai
-                    string[] aiResponse = { "I am not an ai", "I'm all flesh and blood", "I am not a computer", "I am a real human being", "Beep Boop - Command not recognised)" }; //Expand so array is general for positive responses
+                    string[] aiResponse = { "I am not an ai, are you?", "I'm all flesh and blood, how can I be sure you're not ai??", "I am not a computer, smart as one maybe haha, are you real?", "I am a real, how can I be sure you are?", "Beep Boop - Command not recognised)" }; //Expand so array is general for positive responses
                     outputValue = aiResponse[rnd.Next(0, aiResponse.Length)];
+                    break;
+
+                case 5: //User asks if 2nd player is an ai
+                    string[] UniResponse = { "I remeber when I was at uni! Best years of my life" }; //Expand so array is general for positive responses
+                    outputValue = UniResponse[rnd.Next(0, UniResponse.Length)];
                     break;
 
 
@@ -539,26 +549,27 @@ namespace tictactoeTuring
                     break;
 
                 case 996:
-                    string[] wargameResponse = { "Greetings, Professor Falken", "Because it's a boring game. It's always a tie", "The game itself is pointless!"};
+                    string[] wargameResponse = { "Greetings, Professor Falken", "Because it's a boring game. It's always a tie", "The game itself is pointless!" };
                     break;
-                                  
+
                 case 997:
                     string[] terribleResponse = { "Nope", "Nargh", "I don't think so" };
                     outputValue = terribleResponse[rnd.Next(0, terribleResponse.Length)];
                     break;
 
                 case 998:
-                    string[] questionResponse = {"I don't like questions", "Let's focus on the game", "Meh", "I don't care", "Game first, questions later"} ;
+                    string[] questionResponse = { "I don't like questions", "Let's focus on the game", "Meh", "I don't care", "Game first, questions later" };
                     outputValue = questionResponse[rnd.Next(0, questionResponse.Length)];
                     break;
 
                 case 999:
-                    string[] neutralResponse = { "cool", "wow", "ok then", "ha", "nice one"};
+                    string[] neutralResponse = { "cool", "wow", "ok then", "ha", "nice one" };
                     outputValue = neutralResponse[rnd.Next(0, neutralResponse.Length)];
                     break;
 
+
             }
-            
+
 
             return outputValue;
         }
@@ -577,7 +588,7 @@ namespace tictactoeTuring
 
         }
 
-        
+
 
 
     }
